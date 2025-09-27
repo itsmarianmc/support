@@ -4,12 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('utm_origin').value = urlParams.get('utm_origin') || 'N/A';
 	document.getElementById('utm_page').value = urlParams.get('utm_page') || 'N/A';
 	document.getElementById('page_pos').value = urlParams.get('page_pos') || 'N/A';
+	document.getElementById('localtime').value = new Date().toString();
 
 	const contactForm = document.getElementById('contactForm');
 	const formStatus = document.getElementById('formStatus');
 
 	contactForm.addEventListener('submit', async function(e) {
 		e.preventDefault();
+
+		const checkbox = document.getElementById('checkbox');
+		if (!checkbox.checked) {
+			showStatus('Please agree to the Privacy Policy and Terms of Use.', 'error');
+			return;
+		}
 
 		const formData = {
 			name: document.getElementById('name').value,
@@ -18,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			message: document.getElementById('message').value,
 			utm_origin: document.getElementById('utm_origin').value,
 			utm_page: document.getElementById('utm_page').value,
-			page_pos: document.getElementById('page_pos').value
+			page_pos: document.getElementById('page_pos').value,
+			localtime: document.getElementById('localtime').value
 		};
 
 		if (!formData.name || !formData.email || !formData.message) {

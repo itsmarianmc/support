@@ -36,12 +36,13 @@
         <input type="hidden" id="utm_origin" name="utm_origin">
         <input type="hidden" id="utm_page" name="utm_page">
         <input type="hidden" id="page_pos" name="page_pos">
+        <input type="hidden" id="localtime" name="localtime">
     </div>
     <div class="container">
         <header>
             <h1>
                 <i class="fas fa-envelope"></i>
-                Contact*
+                Contact
             </h1>
             <p class="header-subtitle">If you need help or have found errors or bugs in my tools, pages, or other things, fill out this form and I will get back to you.</p>
         </header>
@@ -73,6 +74,20 @@
                     Description*
                 </label>
                 <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-group">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="checkbox" name="checkbox" required>
+                    <div>
+                        <a>
+                            I have read and agree to the 
+                            <a class="linkout nodecoration" href="/legal/privacy" target="_blank">Privacy Policy</a> and 
+                            <a class="linkout nodecoration" href="/legal/terms" target="_blank">Terms of Use</a>.
+                            I understand that my data will be processed to respond to my inquiry, and may be stored for follow-up or support purposes. 
+                            For details on how my information is handled, including my rights regarding data protection and how to withdraw consent, please review the policies above.
+                        </a>
+                    </div>
+                </div>
             </div>
             <button type="submit" class="btn">
                 <i class="fas fa-paper-plane"></i>
