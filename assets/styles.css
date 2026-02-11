@@ -36,7 +36,6 @@ body {
 	padding: 1rem;
 	min-height: 100vh;
 	display: flex;
-	justify-content: center;
 }
 
 .container {
