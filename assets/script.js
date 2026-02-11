@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('utm_page').value = urlParams.get('utm_page') || 'N/A';
 	document.getElementById('page_pos').value = urlParams.get('page_pos') || 'N/A';
 	document.getElementById('localtime').value = new Date().toString();
+	
+	document.getElementById('os').value = urlParams.get('os') || 'N/A';
+	document.getElementById('os_version').value = urlParams.get('os_version') || 'N/A';
+	document.getElementById('python_version').value = urlParams.get('python_version') || 'N/A';
+	document.getElementById('machine').value = urlParams.get('machine') || 'N/A';
+	document.getElementById('processor').value = urlParams.get('processor') || 'N/A';
 
 	const contactForm = document.getElementById('contactForm');
 	const formStatus = document.getElementById('formStatus');
@@ -26,7 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			utm_origin: document.getElementById('utm_origin').value,
 			utm_page: document.getElementById('utm_page').value,
 			page_pos: document.getElementById('page_pos').value,
-			localtime: document.getElementById('localtime').value
+			localtime: document.getElementById('localtime').value,
+			os: document.getElementById('os').value,
+			os_version: document.getElementById('os_version').value,
+			python_version: document.getElementById('python_version').value,
+			machine: document.getElementById('machine').value,
+			processor: document.getElementById('processor').value
 		};
 
 		if (!formData.name || !formData.email || !formData.message) {
