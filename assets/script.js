@@ -14,9 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	const contactForm = document.getElementById('contactForm');
 	const formStatus = document.getElementById('formStatus');
+	localStorage.removeItem('isFromProject');
 
 	if (document.getElementById('os').value !== 'N/A') {
 		document.querySelector('.allowTracking').style.display = 'block';
+		localStorage.setItem('isFromProject', 'true');
 	}
 
 	contactForm.addEventListener('submit', async function(e) {
@@ -66,6 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			if (response.ok) {
 				showStatus('Message sent successfully! I will reach out back to you soon.', 'success');
+				if (localStorage.getItem('isFromProject') === 'true') {
+					localStorage.removeItem('isFromProject');
+					window.location.href = '/_success.html';
+				}
 				contactForm.reset();
 			} else {
 				const errorData = await response.json();
