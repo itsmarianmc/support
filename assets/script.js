@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				showStatus('Message sent successfully! I will reach out back to you soon.', 'success');
 				if (localStorage.getItem('isFromProject') === 'true') {
 					localStorage.removeItem('isFromProject');
-					window.location.href = '/_success';
+					window.location.href = '/success';
 				}
 				contactForm.reset();
 			} else {
