@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	const contactForm = document.getElementById('contactForm');
 	const formStatus = document.getElementById('formStatus');
 
+	if (document.getElementById('os').value !== 'N/A') {
+		document.querySelector('.allowTracking').style.display = 'block';
+	}
+
 	contactForm.addEventListener('submit', async function(e) {
 		e.preventDefault();
 
