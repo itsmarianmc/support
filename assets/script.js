@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('machine').value = urlParams.get('machine') || 'N/A';
 	document.getElementById('processor').value = urlParams.get('processor') || 'N/A';
 
+	if (urlParams.get('name')) document.getElementById('name').value = urlParams.get('name');
+	if (urlParams.get('mail')) document.getElementById('email').value = urlParams.get('mail');
+	if (urlParams.get('subject')) document.getElementById('title').value = urlParams.get('subject');
+	if (urlParams.get('description')) document.getElementById('message').value = urlParams.get('description');
+
 	const contactForm = document.getElementById('contactForm');
 	const formStatus = document.getElementById('formStatus');
 	localStorage.removeItem('isFromProject');
