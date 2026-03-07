@@ -16,6 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
 	if (urlParams.get('mail')) document.getElementById('email').value = urlParams.get('mail');
 	if (urlParams.get('subject')) document.getElementById('title').value = urlParams.get('subject');
 	if (urlParams.get('description')) document.getElementById('message').value = urlParams.get('description');
+	
+	const fieldMap = { 'name': 'name', 'mail': 'email', 'subject': 'title', 'description': 'message' };
+	Object.entries(fieldMap).forEach(([param, fieldId]) => {
+		if (urlParams.get(param + '-disabled') === 'true') {
+			document.getElementById(fieldId).readOnly = true;
+			document.getElementById(fieldId).style.opacity = '0.5';
+			document.getElementById(fieldId).style.cursor = 'not-allowed';
+		}
+	});
 
 	const contactForm = document.getElementById('contactForm');
 	const formStatus = document.getElementById('formStatus');
